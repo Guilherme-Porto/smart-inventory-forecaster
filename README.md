@@ -26,13 +26,13 @@ Built to eliminate stockouts and overstock losses for retail and small businesse
 
 Every retail business faces the same silent killers:
 
-| Problem | Business Impact |
-|---|---|
-| **Stockout** | Lost revenue, damaged customer trust |
-| **Overstock** | Tied-up capital, storage costs, waste |
+| Problem                 | Business Impact                       |
+| ----------------------- | ------------------------------------- |
+| **Stockout**            | Lost revenue, damaged customer trust  |
+| **Overstock**           | Tied-up capital, storage costs, waste |
 | **Gut-feel purchasing** | Inconsistent decisions, no data trail |
 
-Traditional inventory systems tell you *what you have*. This system tells you *what you'll need*.
+Traditional inventory systems tell you _what you have_. This system tells you _what you'll need_.
 
 ---
 
@@ -73,45 +73,48 @@ The system is built as a **decoupled microservices architecture**. The AI/ML for
 ## 🛠️ Tech Stack
 
 ### Frontend
-| Technology | Purpose |
-|---|---|
-| **React 18** | Component-based UI |
-| **Tailwind CSS** | Utility-first responsive styling |
-| **Chart.js** | Interactive forecast & inventory charts |
+
+| Technology       | Purpose                                 |
+| ---------------- | --------------------------------------- |
+| **React 18**     | Component-based UI                      |
+| **Tailwind CSS** | Utility-first responsive styling        |
+| **Chart.js**     | Interactive forecast & inventory charts |
 
 ### Backend (Core API)
-| Technology | Purpose |
-|---|---|
-| **Java 17+** | High-performance backend language |
-| **Spring Boot 3+** | REST API framework and dependency injection |
-| **Spring Security/JWT** |Robust and stateless authentication |
-| **PostgreSQL** | Relational storage for inventory and sales logs |
-| **Hibernate / JPA** | Object-Relational Mapping (ORM) |
+
+| Technology              | Purpose                                         |
+| ----------------------- | ----------------------------------------------- |
+| **Java 17+**            | High-performance backend language               |
+| **Spring Boot 3+**      | REST API framework and dependency injection     |
+| **Spring Security/JWT** | Robust and stateless authentication             |
+| **PostgreSQL**          | Relational storage for inventory and sales logs |
+| **Hibernate / JPA**     | Object-Relational Mapping (ORM)                 |
 
 ### AI / Data Science Service
-| Technology | Purpose |
-|---|---|
-| **Python 3.11+** | Forecasting microservice |
-| **Pandas** | Data ingestion and time-series preprocessing |
-| **Scikit-Learn** | Regression and forecasting models |
-| **FastAPI** | Lightweight HTTP layer for the Python service |
+
+| Technology       | Purpose                                       |
+| ---------------- | --------------------------------------------- |
+| **Python 3.11+** | Forecasting microservice                      |
+| **Pandas**       | Data ingestion and time-series preprocessing  |
+| **Scikit-Learn** | Regression and forecasting models             |
+| **FastAPI**      | Lightweight HTTP layer for the Python service |
 
 ---
 
 ## 📋 Functional Requirements
 
-| ID | Requirement | Status |
-|---|---|---|
-| FR1 | Product and stock CRUD | 🔄 In Progress |
-| FR2 | CSV historical data upload | 🔄 In Progress |
-| FR3 | 30-day demand forecast per product | 🔄 In Progress |
+| ID  | Requirement                                  | Status         |
+| --- | -------------------------------------------- | -------------- |
+| FR1 | Product and stock CRUD                       | 🔄 In Progress |
+| FR2 | CSV historical data upload                   | 🔄 In Progress |
+| FR3 | 30-day demand forecast per product           | 🔄 In Progress |
 | FR4 | Dashboard risk alerts (stockout / overstock) | 🔄 In Progress |
 
 ## ⚙️ Non-Functional Requirements
 
-| ID | Requirement | Decision |
-|---|---|---|
-| NFR1 | Forecasting module must be independently deployable | Standalone FastAPI service |
+| ID   | Requirement                                         | Decision                     |
+| ---- | --------------------------------------------------- | ---------------------------- |
+| NFR1 | Forecasting module must be independently deployable | Standalone FastAPI service   |
 | NFR2 | Interface must be usable by non-technical operators | Mobile-responsive, no jargon |
 
 ---
@@ -130,12 +133,14 @@ The system is built as a **decoupled microservices architecture**. The AI/ML for
 ### Installation
 
 **1. Clone the repository**
+
 ```bash
 git clone https://github.com/Guilherme-Porto/smart-inventory-forecaster.git
 cd smart-inventory-forecaster
 ```
 
 **2. Set up the Core API**
+
 ```bash
 cd backend
 cp .env.example .env        # Fill in your DB credentials
@@ -144,6 +149,7 @@ npm run dev
 ```
 
 **3. Set up the Forecasting Service**
+
 ```bash
 cd forecasting-service
 pip install -r requirements.txt
@@ -151,6 +157,7 @@ uvicorn main:app --reload --port 8001
 ```
 
 **4. Set up the Frontend**
+
 ```bash
 cd frontend
 npm install
@@ -158,6 +165,7 @@ npm run dev
 ```
 
 **5. Run database migrations**
+
 ```bash
 cd backend
 npm run migrate
